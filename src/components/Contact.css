@@ -1,0 +1,153 @@
+.contact-section {
+  padding: 80px 20px;
+  text-align: center;
+  background: #f9f9f9;
+  font-family: "Poppins", sans-serif; /* ✅ secondary font for body */
+}
+
+.contact-title {
+  font-family: "Syne", sans-serif; /* ✅ primary font */
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.contact-subtitle {
+  font-family: "Poppins", sans-serif; /* ✅ secondary font */
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  background: none;
+  padding: 0;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #ffffff;
+  outline: none;
+  box-shadow: 0px 0px 0px rgba(0, 123, 255, 0);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  font-family: "Poppins", sans-serif; /* ✅ secondary font */
+  color: #222;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  box-shadow: 0px 0px 8px rgba(123, 92, 255, 0.6);
+  transform: scale(1.01);
+}
+
+.contact-form button {
+  padding: 14px;
+  font-size: 1.1rem;
+  background: linear-gradient(135deg, #7b5cff 0%, #5c3dff 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  font-family: "Poppins", sans-serif; /* ✅ secondary font */
+  font-weight: 500;
+}
+
+.contact-form button:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 20px rgba(123, 92, 255, 0.5);
+  background: linear-gradient(135deg, #6a4eff 0%, #4a2eff 100%);
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.socials a {
+  font-size: 1.8rem;
+  color: #333;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.socials a:hover {
+  color: #7b5cff;
+  transform: scale(1.2);
+}
+
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 50px 15px;
+  }
+
+  .contact-title {
+    font-size: 1.8rem;
+  }
+
+  .contact-subtitle {
+    font-size: 1rem;
+    margin-bottom: 25px;
+  }
+
+  .contact-form {
+    gap: 18px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.9rem;
+    padding: 12px;
+  }
+
+  .contact-form button {
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  .socials {
+    gap: 18px;
+  }
+
+  .socials a {
+    font-size: 1.5rem;
+  }
+}
+
+/* ✅ Success message styling */
+.success-message {
+  font-family: "Poppins", sans-serif; /* ✅ secondary font */
+  font-size: 1.1rem;
+  color: #28a745;
+  margin: 20px auto;
+  padding: 12px 18px;
+  background: #e9f9ef;
+  border: 1px solid #28a745;
+  border-radius: 6px;
+  max-width: 600px;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Smooth fade-in effect */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Syne:wght@600;700&display=swap');
+
+.about-section {
+  width: 100vw; 
+  padding: 4rem 2rem;
+  background: #fff;
+}
+
+/* Container */
+.about-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3rem;
+  box-sizing: border-box;
+}
+
+/* Image */
+.about-image img {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease;
+}
+
+.about-image img:hover {
+  transform: scale(1.05);
+}
+
+/* Text */
+.about-text {
+  flex: 1;
+  min-width: 320px;
+}
+
+/* ✅ Headings use Syne */
+.about-heading {
+  font-family: 'Syne', sans-serif; /* primary font */
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.about-heading::after {
+  content: "";
+  width: 60px;
+  height: 4px;
+  background: #6f79a8;
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  border-radius: 2px;
+}
+
+/* ✅ Descriptions use Poppins */
+.about-description {
+  font-family: 'Poppins', sans-serif; /* secondary font */
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 1.5rem;
+  max-width: 650px;
+}
+
+.highlight {
+  color: #6f79a8;
+  font-weight: 600;
+}
+
+/* Traits Grid */
+.traits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.trait {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: #f8f9ff;
+  padding: 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.trait:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+.trait-icon {
+  font-size: 1.5rem;
+}
+
+.trait p {
+  font-family: 'Poppins', sans-serif; /* secondary font */
+  margin: 0;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.4;
+}
+
+.trait strong {
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+/* ✅ Mobile Fix */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 16px;
+    overflow-x: hidden;
+  }
+
+  .about-image img {
+    width: 160px;
+    height: 160px;
+  }
+
+  .about-text {
+    max-width: 100%;
+  }
+
+  .about-heading {
+    font-size: 1.6rem;
+  }
+
+  .about-description {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .traits-grid {
+    grid-template-columns: 1fr; /* stack into 1 column */
+  }
+}
