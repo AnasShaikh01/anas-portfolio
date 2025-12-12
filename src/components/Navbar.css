@@ -9,7 +9,6 @@
 
 html, body {
   width: 100%;
-  overflow-x: hidden;
 }
 
 /* Navbar container */
@@ -20,18 +19,26 @@ html, body {
   align-items: center;
   justify-content: space-between;
   padding: 15px 40px;
-  background-color: white;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  background: #6f79a8;
   position: sticky;
   top: 0;
   z-index: 100;
   max-width: 100%; /* ✅ prevent overflow */
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.navbar.scrolled {
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+.navbar.scrolled .nav-logo, .navbar.scrolled .nav-links li a, .navbar.scrolled .hamburger span {
+  color: #333;
 }
 
 .nav-logo {
   font-size: 24px;
   font-weight: 700;
-  color: #333;
+  color: #fff;
 }
 
 /* Nav links */
@@ -50,7 +57,7 @@ html, body {
 .nav-links li a {
   position: relative;
   text-decoration: none;
-  color: #333;
+  color: #fff;
   font-weight: 500;
   transition: color 0.3s ease;
   white-space: nowrap; /* ✅ keeps text neat */
@@ -63,11 +70,15 @@ html, body {
   height: 2px;
   left: 0;
   bottom: -4px;
-  background-color: #007BFF;
+  background-color: #fff;
   transition: width 0.3s ease;
 }
 
 .nav-links li a:hover {
+  color: #fff;
+}
+
+.navbar.scrolled .nav-links li a:hover {
   color: #007BFF;
 }
 
@@ -75,21 +86,30 @@ html, body {
   width: 100%;
 }
 
-/* Button */
-.nav-button button {
+.navbar.scrolled .nav-links li a:hover::after {
+  background-color: #007BFF;
+}
+
+.nav-button::after {
+  display: none !important; /* ✅ Explicitly remove underline from button */
+}
+
+.nav-button {
   padding: 8px 20px;
   background-color: #007BFF;
-  color: white;
+  color: white !important; /* Ensure text is white */
   border: none;
   border-radius: 6px;
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.3s ease;
   font-family: 'Poppins', sans-serif; /* ✅ Correct font */
+  text-decoration: none;
 }
 
-.nav-button button:hover {
+.nav-button:hover {
   background-color: #0056b3;
+  color: white !important;
 }
 
 /* Hamburger */
@@ -106,9 +126,13 @@ html, body {
 .hamburger span {
   width: 100%;
   height: 3px;
-  background: #000;
+  background: #fff;
   border-radius: 2px;
   transition: all 0.3s ease;
+}
+
+.navbar.scrolled .hamburger span {
+  background: #333;
 }
 
 /* Mobile styles */
@@ -122,13 +146,17 @@ html, body {
     position: absolute;
     top: 65px;
     left: 0;
-    width: 100%;
+    width: 100vw;
     background-color: white;
     flex-direction: column;
     align-items: center;
     gap: 20px;
     padding: 20px 0;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links li a {
+    color: #333;
   }
 
   .nav-links.active {

@@ -1,5 +1,6 @@
 import React from 'react';
 import './Hero.css';
+import AnasResume from '../assets/AnasResume.pdf';
 
 const Hero = () => {
   return (
@@ -9,7 +10,7 @@ const Hero = () => {
         <h1>I am Anas<br />Shaikh</h1>
         <h4>ASPIRING AI & ML ENGINEER<br />WEB DEVELOPER</h4>
 
-        <a href="/resume.pdf" download className="hero-btn">
+        <a href={AnasResume} download="Anas-Shaikh-Resume.pdf" className="hero-btn">
           Download Resume
         </a>
       </div>

@@ -46,7 +46,7 @@ const Contact = () => {
         <a href="mailto:anasshaikhnetworks@gmail.com">
           <FaEnvelope />
         </a>
-        <a href="https://www.fiverr.com/s/ak5LBaG" target="_blank" rel="noreferrer">
+        <a href="https://www.fiverr.com/anasshaikh01/" target="_blank" rel="noreferrer">
           <FaBriefcase />
         </a>
       </div>

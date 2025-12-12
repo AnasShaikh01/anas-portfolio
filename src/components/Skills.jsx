@@ -2,6 +2,7 @@ import React from "react";
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaPython, FaPhp, FaWordpress, FaShopify } from "react-icons/fa";
 import { SiMysql, SiCanva, SiGit, SiGithub, SiNodedotjs } from "react-icons/si";
 import { MdSecurity } from "react-icons/md";
+import { SiFlask } from "react-icons/si";
 import { RiMoneyDollarCircleFill, RiLoginBoxLine, RiShoppingCart2Fill, RiBankCard2Fill } from "react-icons/ri";
 import "./Skills.css";
 
@@ -22,6 +23,7 @@ const categories = [
       { name: "Python", icon: <FaPython className="skill-icon" /> },
       { name: "PHP", icon: <FaPhp className="skill-icon" /> },
       { name: "MySQL", icon: <SiMysql className="skill-icon" /> },
+      { name: "Flask", icon: <SiFlask className="skill-icon" /> },
     ],
   },
   {

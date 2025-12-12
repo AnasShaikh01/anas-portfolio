@@ -12,7 +12,7 @@ export default function FreelanceSection() {
           </p>
         </div>
         <a 
-          href="https://www.fiverr.com/yourusername" 
+          href="https://www.fiverr.com/anasshaikh01/" 
           target="_blank" 
           rel="noopener noreferrer"
           className="cta-btn"

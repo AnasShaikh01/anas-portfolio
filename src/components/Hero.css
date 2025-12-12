@@ -55,15 +55,12 @@
   border-radius: 25px;
   text-decoration: none;
   font-weight: 600;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
   display: inline-block;
 }
 
 .hero-btn:hover {
   background-color: #5a3fb0;
   color: #fff;
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
-  transform: translateY(-2px);
 }
 
 /* ---------------- MOBILE RESPONSIVENESS ---------------- */
