@@ -9,7 +9,7 @@ const ProjectsSection = () => {
       description:
         "AI-powered resume analyzer using NLP and ML to match resumes with job descriptions and provide insights.",
       tech: ["Python", "React", "NLP", "Scikit-learn"],
-      link: "#",
+      link: "https://github.com/AnasShaikh01/ai-resume-analyzer.git",
     },
 
     {
@@ -17,7 +17,7 @@ const ProjectsSection = () => {
       description:
         "Next.js platform for selling second-hand phones. Built with Tailwind and Supabase. Developed the user panel.",
       tech: ["Next.js", "Tailwind CSS", "Supabase", "React"],
-      link: "#",
+      link: "https://recashifyuser.vercel.app/",
     },
 
     {
