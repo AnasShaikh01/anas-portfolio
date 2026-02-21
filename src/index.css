@@ -11,6 +11,11 @@ html, body {
 
 body {
   overflow-x: hidden; /* hide accidental horizontal overflow while debugging */
+  background: #020617;
+}
+
+body.loading {
+  overflow: hidden;
 }
 
 /* make media elements fluid */
