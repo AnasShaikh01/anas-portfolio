@@ -23,7 +23,7 @@ const ProjectsSection = () => {
       title: "My Portfolio Website",
       description:
         "Personal portfolio showcasing my skills, experience, and projects. Built with React.",
-      tech: ["React", "JavaScript", "Vite", "HTML5"],
+      tech: ["React", "JavaScript", "Vite", "Framer Motion"],
       link: "https://anas-shaikh.vercel.app",
     },
   ];
