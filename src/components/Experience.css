@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@600;700&family=Poppins:wght@400;500&display=swap");
+
+/* Section */
+
+.cine-section {
+  padding: 130px 10%;
+  background: linear-gradient(
+    180deg,
+    #eaf3ff 0%,
+    #f9f9f9 45%,
+    #ffffff 100%
+  );
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Soft Glow */
+
+.cine-section::before {
+  content: "";
+  position: absolute;
+  inset: -160px;
+  background:
+    radial-gradient(circle at 20% 25%, rgba(108,99,255,0.07), transparent 45%),
+    radial-gradient(circle at 80% 75%, rgba(108,99,255,0.06), transparent 50%);
+}
+
+/* Title */
+
+.cine-title {
+  font-family: "Syne", sans-serif;
+  font-size: 2.9rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+.cine-subtitle {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.15rem;
+  color: #555;
+  margin-bottom: 100px;
+}
+
+/* Container */
+
+.cine-container {
+  position: relative;
+  max-width: 950px;
+  margin: auto;
+  min-height: 1200px;
+}
+
+/* Curved Path */
+
+.cine-path {
+  position: absolute;
+  left: 50%;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  transform: translateX(-50%);
+  pointer-events: none;
+
+  opacity: 0.6;
+}
+
+/* Card */
+
+.cine-card {
+  position: relative;
+  width: 380px;
+
+  background: rgba(255,255,255,0.94);
+  backdrop-filter: blur(12px);
+
+  border-radius: 36px;
+  padding: 34px 32px;
+
+  box-shadow: 0 16px 38px rgba(0,0,0,0.07);
+
+  text-align: left;
+
+  margin-bottom: 120px;
+}
+
+/* Position */
+
+.cine-card.left {
+  margin-right: auto;
+}
+
+.cine-card.right {
+  margin-left: auto;
+}
+
+/* Dot */
+
+.cine-dot {
+  position: absolute;
+  top: 28px;
+  right: -52px;
+
+  width: 22px;
+  height: 22px;
+
+  background: linear-gradient(135deg, #6c63ff, #8d84ff);
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 0 9px rgba(108,99,255,0.18),
+    0 0 26px rgba(108,99,255,0.4);
+}
+
+.cine-card.right .cine-dot {
+  left: -52px;
+  right: auto;
+}
+
+/* Year */
+
+.cine-year {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: #6c63ff;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Role */
+
+.cine-card h3 {
+  font-family: "Syne", sans-serif;
+  font-size: 1.7rem;
+
+  background: linear-gradient(90deg, #6c63ff, #8d84ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  margin-bottom: 6px;
+}
+
+/* Company */
+
+.cine-card h4 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 14px;
+}
+
+/* Desc */
+
+.cine-card p {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #333;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+  .cine-container {
+    min-height: auto;
+    padding-left: 20px;
+  }
+
+  .cine-path {
+    display: none;
+  }
+
+  .cine-card {
+    width: 100%;
+    margin-left: 40px !important;
+  }
+
+  .cine-dot {
+    display: none;
+  }
+
+}

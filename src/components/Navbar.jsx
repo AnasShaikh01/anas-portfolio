@@ -7,52 +7,57 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Change background when user scrolls past 50px
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    // Cleanup function to remove the event listener
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
+
+      {/* Logo */}
       <div className="nav-logo">Anas</div>
+
+      {/* Hamburger */}
       <div className="hamburger" onClick={toggleMenu}>
         <span></span>
         <span></span>
         <span></span>
       </div>
+
+      {/* Links */}
       <ul className={`nav-links ${isMenuOpen ? "active" : ""}`}>
+
+        <li><a href="#home" onClick={closeMenu}>Home</a></li>
+        <li><a href="#about" onClick={closeMenu}>About</a></li>
+        <li><a href="#skills" onClick={closeMenu}>Skills</a></li>
+        <li><a href="#projects" onClick={closeMenu}>Projects</a></li>
+        <li><a href="#experience" onClick={closeMenu}>Experience</a></li>
+        <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
+
         <li>
-          <a href="#home">Home</a>
+          <a
+            href="https://www.fiverr.com/anasshaikh01/"
+            target="_blank"
+            rel="noreferrer"
+            className="nav-button"
+          >
+            Hire Me
+          </a>
         </li>
-        <li>
-          <a href="#about">About</a>
-        </li>
-        <li>
-          <a href="#skills">Skills</a>
-        </li>
-        <li>
-          <a href="#projects">Projects</a>
-        </li>
-        <li>
-          <a href="#contact">Contact</a>
-        </li>
-        <li><a href="https://www.fiverr.com/anasshaikh01/" className="nav-button">Hire Me</a></li>
+
       </ul>
+
     </nav>
   );
 };

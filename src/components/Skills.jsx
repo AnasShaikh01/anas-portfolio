@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import "./Skills.css";
 
 const categories = [
@@ -24,17 +25,63 @@ const categories = [
   },
 ];
 
+/* Animations */
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: {
+    opacity: 0,
+    y: 40,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
+
 const Skills = () => {
   return (
     <section id="skills" className="skills-section">
-      <h2 className="skills-title">
-        My <span className="highlight">Skills</span>
-      </h2>
 
-      <div className="skills-grid">
+      {/* Title */}
+      <motion.h2
+        className="skills-title"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        viewport={{ once: true }}
+      >
+        My <span className="highlight">Skills</span>
+      </motion.h2>
+
+      {/* Grid */}
+      <motion.div
+        className="skills-grid"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         {categories.map((category, idx) => (
-          <div key={idx} className="category-card">
-            
+          <motion.div
+            key={idx}
+            className="category-card"
+            variants={cardVariants}
+          >
+
             {/* Header */}
             <div className="card-header">
               <h3 className="category-title">{category.title}</h3>
@@ -49,9 +96,10 @@ const Skills = () => {
               ))}
             </div>
 
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
+
     </section>
   );
 };

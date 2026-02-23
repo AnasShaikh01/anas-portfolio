@@ -1,5 +1,6 @@
 import React from "react";
 import { FiExternalLink } from "react-icons/fi";
+import { motion } from "framer-motion";
 import "./ProjectsSection.css";
 
 const ProjectsSection = () => {
@@ -11,7 +12,6 @@ const ProjectsSection = () => {
       tech: ["Python", "React", "NLP", "Scikit-learn"],
       link: "https://github.com/AnasShaikh01/ai-resume-analyzer.git",
     },
-
     {
       title: "ReCashify",
       description:
@@ -19,7 +19,6 @@ const ProjectsSection = () => {
       tech: ["Next.js", "Tailwind CSS", "Supabase", "React"],
       link: "https://recashifyuser.vercel.app/",
     },
-
     {
       title: "My Portfolio Website",
       description:
@@ -29,15 +28,48 @@ const ProjectsSection = () => {
     },
   ];
 
+  const cardVariants = {
+    hidden: {
+      opacity: 0,
+      y: 50,
+    },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.2,
+        duration: 0.7,
+        ease: "easeOut",
+      },
+    }),
+  };
+
   return (
     <section className="projects" id="projects">
-      <h2 className="projects-title">My Projects</h2>
+
+      {/* Title */}
+      <motion.h2
+        className="projects-title"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        viewport={{ once: true }}
+      >
+        My Projects
+      </motion.h2>
 
       {/* Projects Row */}
       <div className="projects-grid">
         {projects.map((project, index) => (
-          <div className="project-card" key={index}>
-
+          <motion.div
+            className="project-card"
+            key={index}
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            custom={index}
+            viewport={{ once: true, amount: 0.3 }}
+          >
             {/* Content */}
             <div className="project-content">
               <h3>{project.title}</h3>
@@ -62,25 +94,26 @@ const ProjectsSection = () => {
             >
               View Project <FiExternalLink />
             </a>
-
-          </div>
+          </motion.div>
         ))}
       </div>
 
       {/* Coming Soon Row */}
       <div className="projects-grid">
-        <div className="project-card coming-soon">
-          <h3>Coming Soon</h3>
-        </div>
-
-        <div className="project-card coming-soon">
-          <h3>Coming Soon</h3>
-        </div>
-
-        <div className="project-card coming-soon">
-          <h3>Coming Soon</h3>
-        </div>
+        {[1, 2, 3].map((_, i) => (
+          <motion.div
+            key={i}
+            className="project-card coming-soon"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: i * 0.15, duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h3>Coming Soon</h3>
+          </motion.div>
+        ))}
       </div>
+
     </section>
   );
 };
